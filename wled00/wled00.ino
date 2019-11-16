@@ -119,8 +119,16 @@ char ntpServerName[] = "0.wled.pool.ntp.org"; //NTP server to use
 
 
 //WiFi CONFIG (all these can be changed via web UI, no need to set them here)
-char clientSSID[33] = "Your_Network";
-char clientPass[65] = "";
+#ifdef CUSTOM_WIFI_SSID
+  char clientSSID[33] = CUSTOM_WIFI_SSID;
+#else
+  char clientSSID[33] = "Your_Network";
+#endif
+#ifdef CUSTOM_WIFI_PASS
+  char clientPass[65] = CUSTOM_WIFI_PASS;
+#else
+  char clientPass[65] = "";
+#endif
 char cmDNS[33] = "x";                         //mDNS address (placeholder, will be replaced by wledXXXXXXXXXXXX.local)
 char apSSID[33] = "";                         //AP off by default (unless setup)
 byte apChannel = 1;                           //2.4GHz WiFi AP channel (1-13)
