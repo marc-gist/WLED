@@ -78,7 +78,8 @@
 #include "html_other.h"
 #include "FX.h"
 #include "ir_codes.h"
-
+// setup WiFi without including in code for others to see :)
+#include "custom_header.h"
 
 #if IR_PIN < 0
  #ifndef WLED_DISABLE_INFRARED
